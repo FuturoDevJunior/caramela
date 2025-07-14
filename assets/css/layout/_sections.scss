@@ -1,10 +1,15 @@
 // Seções
 section {
   max-width: 1120px;
-  padding: 32px 8px;
+  padding: 40px 16px;
   margin-right: auto;
-  margin-bottom: 32px;
+  margin-bottom: 48px;
   margin-left: auto;
+
+  @media (width <= 600px) {
+    padding: 20px 8px;
+    margin-bottom: 32px;
+  }
 }
 
 .center {
@@ -145,8 +150,8 @@ details {
 
 // Footer
 footer.center {
-  padding: 32px 20px;
-  margin-top: 60px;
+  padding: 40px 20px;
+  margin-top: 80px;
   background: $text;
   color: #fff;
   text-align: center;
