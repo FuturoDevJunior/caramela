@@ -1,13 +1,18 @@
 // Cards
 .card {
-  padding: 24px;
-  margin-bottom: 20px;
+  padding: 32px;
+  margin-bottom: 32px;
   border-radius: $radius;
   background: $card;
   box-shadow: 0 2px 12px rgb(0 0 0 / 7%);
   transition:
     transform 0.3s,
     box-shadow 0.3s;
+
+  @media (width <= 600px) {
+    padding: 18px;
+    margin-bottom: 24px;
+  }
 
   &:hover {
     transform: translateY(-4px);
@@ -21,15 +26,23 @@
 
     .badge {
       position: absolute;
-      top: -12px;
-      right: 20px;
-      padding: 4px 12px;
+      top: -16px;
+      right: 16px;
+      z-index: 2;
+      padding: 6px 16px;
       border-radius: 999px;
       background: $primary;
       color: #fff;
-      font-size: 0.8rem;
+      font-size: 0.9rem;
       font-weight: 700;
       animation: pulse 2s infinite;
+
+      @media (width <= 600px) {
+        top: -12px;
+        right: 8px;
+        padding: 4px 10px;
+        font-size: 0.8rem;
+      }
     }
   }
 }
