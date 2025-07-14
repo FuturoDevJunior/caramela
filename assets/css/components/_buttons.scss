@@ -1,7 +1,37 @@
 @use '../base/variables' as *;
 
 // Botões
-.btn,
+.btn {
+  display: inline-block;
+  width: 100%;
+  padding: 16px 0;
+  border: none;
+  border-radius: $radius;
+  background: $primary;
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    background 0.25s,
+    box-shadow 0.15s,
+    transform 0.15s;
+  box-shadow: 0 2px 8px rgba($primary, 0.12);
+
+  &:hover,
+  &:focus {
+    background: linear-gradient(90deg, $primary 60%, $secondary 100%);
+    transform: translateY(-2px);
+    outline: 2px solid $yellow;
+    outline-offset: 2px;
+    box-shadow: 0 4px 16px rgba($primary, 0.25);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+}
+
 .btn-main {
   display: inline-block;
   width: 100%;
@@ -15,20 +45,21 @@
   cursor: pointer;
   transition:
     background 0.25s,
-    box-shadow 0.25s,
+    box-shadow 0.15s,
     transform 0.15s;
   box-shadow: 0 2px 8px rgba($primary, 0.12);
 
   &:hover,
   &:focus {
     background: linear-gradient(90deg, $primary 60%, $secondary 100%);
-    box-shadow: 0 4px 16px rgba($primary, 0.18);
-    outline: 3px solid $yellow;
+    transform: translateY(-2px);
+    outline: 2px solid $yellow;
     outline-offset: 2px;
+    box-shadow: 0 4px 16px rgba($primary, 0.25);
   }
 
   &:active {
-    transform: scale(0.97);
+    transform: translateY(0);
   }
 }
 
@@ -45,20 +76,21 @@
   cursor: pointer;
   transition:
     background 0.25s,
-    box-shadow 0.25s,
+    box-shadow 0.15s,
     transform 0.15s;
   box-shadow: 0 2px 8px rgba($secondary, 0.12);
 
   &:hover,
   &:focus {
     background: linear-gradient(90deg, $secondary 60%, $primary 100%);
-    box-shadow: 0 4px 16px rgba($secondary, 0.18);
-    outline: 3px solid $yellow;
+    transform: translateY(-2px);
+    outline: 2px solid $yellow;
     outline-offset: 2px;
+    box-shadow: 0 4px 16px rgba($secondary, 0.25);
   }
 
   &:active {
-    transform: scale(0.97);
+    transform: translateY(0);
   }
 }
 

@@ -1,5 +1,9 @@
 @use '../base/variables' as *;
 
+.badge {
+  animation: pulse 2s infinite;
+}
+
 // Cards
 .card {
   display: flex;
@@ -8,8 +12,8 @@
   border-radius: $radius;
   background: $card;
   transition:
-    transform 0.15s,
-    box-shadow 0.15s;
+    box-shadow 0.15s,
+    transform 0.15s;
   box-shadow: 0 2px 12px rgb(0 0 0 / 7%);
   flex-direction: column;
   gap: 1.5rem;
@@ -20,9 +24,10 @@
     gap: 1rem;
   }
 
-  &:hover {
+  &:hover,
+  &:focus-within {
+    box-shadow: 0 8px 24px rgba($primary, 0.18);
     transform: translateY(-2px);
-    box-shadow: 0 8px 24px rgb(0 0 0 / 12%);
   }
 
   &.card-destaque {
@@ -100,4 +105,16 @@
 
 .card li:last-child {
   margin-bottom: 0;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba($primary, 0.18);
+  }
+  70% {
+    box-shadow: 0 0 0 12px rgba($primary, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba($primary, 0);
+  }
 }
