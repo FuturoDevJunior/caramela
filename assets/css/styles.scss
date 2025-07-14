@@ -11,9 +11,9 @@ $radius: 14px;
 
 // Reset e base
 * {
-  box-sizing: border-box;
-  margin: 0;
   padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
 html {
@@ -22,18 +22,41 @@ html {
 }
 
 body {
+  padding: 0;
+  margin: 0;
   background: $bg;
   color: $text;
   font-family: Inter, sans-serif;
   font-size: 1.08rem;
   line-height: 1.6;
-  margin: 0;
-  padding: 0;
+}
+
+// Seletores globais
+h1 {
+  margin-bottom: 16px;
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+h2 {
+  margin-bottom: 12px;
+  font-size: 1.4rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+h3 {
+  margin-bottom: 12px;
+  font-size: 1.15rem;
+  font-weight: 700;
+  line-height: 1.2;
 }
 
 a {
   color: inherit;
   text-decoration: none;
+  transition: color 0.3s;
 
   &:focus {
     outline: 3px solid $yellow;
@@ -41,20 +64,185 @@ a {
   }
 }
 
+li {
+  // estilo global para li
+}
+
+summary {
+  // estilo global para summary
+}
+
+// Blocos contextuais do menos para o mais específico
+.details summary, details summary {
+  display: flex;
+  font-weight: 600;
+  cursor: pointer;
+  justify-content: space-between;
+
+  &:focus {
+    outline: 2px solid $yellow;
+  }
+}
+
+.details, details {
+  padding: 14px;
+  margin-bottom: 10px;
+  border-radius: $radius;
+  background: $card;
+  box-shadow: 0 2px 12px rgb(0 0 0 / 5%);
+}
+
+.steps li {
+  position: relative;
+  padding-left: 40px;
+  margin-bottom: 16px;
+
+  &::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: $primary;
+    color: #fff;
+    font-weight: 600;
+    content: counter(step-counter);
+    counter-increment: step-counter;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.card ul li {
+  position: relative;
+  padding-left: 24px;
+  margin-bottom: 8px;
+
+  &::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: $primary;
+    font-weight: 700;
+    content: '✓';
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.card ul {
+  padding-left: 0;
+  margin: 16px 0;
+  list-style: none;
+}
+
+.card {
+  padding: 24px;
+  margin-bottom: 20px;
+  border-radius: $radius;
+  background: $card;
+  box-shadow: 0 2px 12px rgb(0 0 0 / 7%);
+  transition: transform 0.3s, box-shadow 0.3s;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgb(0 0 0 / 12%);
+  }
+
+  &.card-destaque {
+    position: relative;
+    border: 2px solid $primary;
+    box-shadow: 0 4px 16px rgba($primary, 0.15);
+
+    .badge {
+      position: absolute;
+      top: -12px;
+      right: 20px;
+      padding: 4px 12px;
+      border-radius: 999px;
+      background: $primary;
+      color: #fff;
+      font-size: 0.8rem;
+      font-weight: 700;
+      animation: pulse 2s infinite;
+    }
+  }
+}
+
+.main-nav a:hover, .main-nav a:focus {
+  color: $primary;
+}
+
+.main-nav a::after {
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  width: 100%;
+  height: 2px;
+  background: $primary;
+  transition: transform 0.3s;
+  transform: translateX(-50%) scaleX(0);
+  content: '';
+}
+
+.main-nav a:hover::after, .main-nav a:focus::after {
+  transform: translateX(-50%) scaleX(1);
+}
+
+.main-nav a {
+  position: relative;
+  padding: 8px 16px;
+  color: $text;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+.main-nav li {
+  margin: 0 16px;
+}
+
+.main-nav ul {
+  display: flex;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  justify-content: center;
+}
+
+.main-nav {
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  padding: 12px 0;
+  border-bottom: 1px solid $border;
+  background: rgb(255 255 255 / 95%);
+  backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+
 // Botões
 .btn, .btn-main {
   display: inline-block;
-  background: $primary;
+  width: 100%;
+  padding: 16px 0;
   border: none;
   border-radius: $radius;
-  box-shadow: 0 2px 8px rgba($primary, 0.12);
+  background: $primary;
   color: #fff;
-  cursor: pointer;
   font-size: 1.1rem;
   font-weight: 600;
-  padding: 16px 0;
+  cursor: pointer;
   transition: background .25s, box-shadow .25s, transform .15s;
-  width: 100%;
+  box-shadow: 0 2px 8px rgba($primary, 0.12);
 
   &:hover, &:focus {
     background: linear-gradient(90deg, $primary 60%, $secondary 100%);
@@ -68,21 +256,47 @@ a {
   }
 }
 
+.btn-cta {
+  display: inline-block;
+  width: 100%;
+  padding: 16px 0;
+  border: none;
+  border-radius: $radius;
+  background: $secondary;
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background .25s, box-shadow .25s, transform .15s;
+  box-shadow: 0 2px 8px rgba($secondary, 0.12);
+
+  &:hover, &:focus {
+    background: linear-gradient(90deg, $secondary 60%, $primary 100%);
+    box-shadow: 0 4px 16px rgba($secondary, 0.18);
+    outline: 3px solid $yellow;
+    outline-offset: 2px;
+  }
+
+  &:active {
+    transform: scale(0.97);
+  }
+}
+
 // WhatsApp flutuante
 .wa-float {
-  display: flex;
   position: fixed;
   right: 18px;
   bottom: 18px;
-  align-items: center;
-  animation: pulse 1.6s infinite;
-  background: $primary;
+  z-index: 999;
+  display: flex;
+  padding: 14px 22px;
   border-radius: $radius;
-  box-shadow: 0 4px 16px rgb(0 0 0 / 18%);
+  background: $primary;
   color: #fff;
   font-size: 1.1rem;
-  padding: 14px 22px;
-  z-index: 999;
+  animation: pulse 1.6s infinite;
+  align-items: center;
+  box-shadow: 0 4px 16px rgb(0 0 0 / 18%);
 
   &:focus {
     outline: 3px solid $yellow;
@@ -96,69 +310,41 @@ a {
   100% { box-shadow: 0 0 0 0 rgba($primary,0); }
 }
 
-// Cards
-.cards {
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
-}
-
-.card {
-  background: $card;
-  border: 1px solid $border;
-  border-radius: $radius;
-  box-shadow: 0 2px 12px rgb(0 0 0 / 7%);
-  margin-bottom: 12px;
-  opacity: 0;
-  padding: 22px 14px;
-  transform: translateY(30px);
-  transition: opacity .7s cubic-bezier(.4,0,.2,1), transform .7s cubic-bezier(.4,0,.2,1);
-
-  &.visible {
-    opacity: 1;
-    transform: none;
-  }
-}
-
 // Seções
 section {
-  margin-bottom: 32px;
-  margin-left: auto;
-  margin-right: auto;
   max-width: 1120px;
   padding: 32px 8px;
+  margin-right: auto;
+  margin-bottom: 32px;
+  margin-left: auto;
 }
 
 .center {
   text-align: center;
 }
 
-// Títulos
-h1, h2, h3 {
-  font-weight: 700;
-  line-height: 1.2;
-  margin-bottom: 12px;
+.lead {
+  margin-bottom: 32px;
+  font-size: 1.2rem;
+  opacity: 0.9;
 }
-h1 { font-size: 2.1rem; }
-h2 { font-size: 1.4rem; }
-h3 { font-size: 1.15rem; }
 
 // ROI box
 .roi-box {
-  background: $card;
-  border-radius: $radius;
-  box-shadow: 0 2px 12px rgb(0 0 0 / 7%);
-  margin: auto;
   max-width: 480px;
   padding: 18px;
+  margin: auto;
+  border-radius: $radius;
+  background: $card;
+  box-shadow: 0 2px 12px rgb(0 0 0 / 7%);
 
   input {
+    width: 100%;
+    padding: 12px;
+    margin: 6px 0 14px;
     border: 1px solid #cbd5e1;
     border-radius: 8px;
     font-size: 1rem;
-    margin: 6px 0 14px;
-    padding: 12px;
-    width: 100%;
 
     &:focus {
       outline: 2px solid $primary;
@@ -167,656 +353,268 @@ h3 { font-size: 1.15rem; }
 }
 
 #roi-out {
+  margin-top: 10px;
   font-size: 1.1rem;
   font-weight: 700;
-  margin-top: 10px;
 }
 
 // FAQ e detalhes
 .details, details {
-  background: $card;
-  border-radius: $radius;
-  box-shadow: 0 2px 12px rgb(0 0 0 / 5%);
-  margin-bottom: 10px;
   padding: 14px;
+  margin-bottom: 10px;
+  border-radius: $radius;
+  background: $card;
+  box-shadow: 0 2px 12px rgb(0 0 0 / 5%);
+}
 
-  summary {
+.details summary, details summary {
+  display: flex;
+  font-weight: 600;
+  cursor: pointer;
+  justify-content: space-between;
+
+  &:focus {
+    outline: 2px solid $yellow;
+  }
+}
+
+// Processo
+.steps {
+  max-width: 600px;
+  padding: 24px;
+  margin: 0 auto;
+  border-radius: $radius;
+  background: $card;
+  list-style: none;
+  box-shadow: 0 2px 12px rgb(0 0 0 / 7%);
+}
+
+.steps li {
+  position: relative;
+  padding-left: 40px;
+  margin-bottom: 16px;
+
+  &::before {
+    position: absolute;
+    top: 0;
+    left: 0;
     display: flex;
-    cursor: pointer;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: $primary;
+    color: #fff;
     font-weight: 600;
-    justify-content: space-between;
+    content: counter(step-counter);
+    counter-increment: step-counter;
+    align-items: center;
+    justify-content: center;
+  }
 
-    &:focus {
-      outline: 2px solid $yellow;
-    }
+  &:last-child {
+    margin-bottom: 0;
   }
 }
 
 // Depoimentos
-.card strong {
-  display: block;
-  color: $primary-dark;
-  margin-top: 10px;
-}
-
-// Passos
-.steps {
-  font-size: 1.05rem;
-  margin: auto;
-  max-width: 760px;
-  padding-left: 1.2rem;
-}
-
-// Responsividade
-@media (width >= 640px) {
-  .cards {
-    flex-direction: row;
-    gap: 28px;
-  }
-
-  .card {
-    margin-bottom: 0;
-    min-width: 280px;
-  }
-
-  .btn, .btn-main {
-    width: auto;
-  }
-
-  .hero {
-    display: grid;
-    align-items: center;
-    grid-template-columns: 1fr 1fr;
-    text-align: left;
-
-    img {
-      margin: 0 auto 0 0;
-    }
-  }
-}
-
-@media (width <= 400px) {
-  .btn, .btn-main {
-    font-size: 1rem;
-    padding: 10px 8px;
-  }
-
-  section {
-    padding: 18px 2px;
-  }
-
-  .wa-float {
-    right: 8px;
-    bottom: 8px;
-    font-size: 1rem;
-    padding: 10px 12px;
-  }
-}
-
-// Foco visível global
-:focus-visible {
-  outline: 3px solid $yellow !important;
-  outline-offset: 2px;
-} 
-
-// Imagem do hero
-.hero-img {
-  display: block;
-  border-radius: $radius;
-  box-shadow: 0 2px 12px rgb(0 0 0 / 7%);
-  margin-bottom: 1.5rem;
-  max-width: 360px;
-  object-fit: cover;
-  width: 100%;
-}
-
-// Avatar depoimentos
 .avatar {
   display: block;
-  border-radius: 50%;
-  box-shadow: 0 2px 8px rgb(0 0 0 / 10%);
-  height: 80px;
-  margin-bottom: 1rem;
-  margin-left: auto;
-  margin-right: auto;
-  object-fit: cover;
   width: 80px;
+  height: 80px;
+  margin: 0 auto 12px;
+  border-radius: 50%;
 }
 
-// Ajuste cards depoimentos para grid responsivo
-#depoimentos .cards {
-  display: grid;
-  gap: 18px;
-  grid-template-columns: 1fr;
-}
-
-@media (width >= 640px) {
-  #depoimentos .cards {
-    gap: 28px;
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-// Centralização universal
-.center {
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
-}
-
-// Grid flexível para cards em todas as seções
-.cards {
-  display: grid;
-  gap: 20px;
-  grid-template-columns: 1fr;
-}
-
-@media (width >= 480px) {
-  .cards {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (width >= 900px) {
-  .cards {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-// Card refinado
-.card {
-  display: flex;
-  align-items: center;
-  background: $card;
-  border: 1px solid $border;
-  border-radius: $radius;
-  box-shadow: 0 2px 12px rgb(0 0 0 / 7%);
-  flex-direction: column;
-  min-height: 320px;
-  opacity: 0;
-  padding: 2rem 1.5rem;
-  transform: translateY(30px);
-  transition: opacity .7s cubic-bezier(.4,0,.2,1), transform .7s cubic-bezier(.4,0,.2,1);
-
-  &.visible {
-    opacity: 1;
-    transform: none;
-  }
-
-  h3 {
-    font-size: 1.2rem;
-    margin-bottom: .5rem;
-    text-align: center;
-  }
-
-  .price {
-    color: $primary;
-    font-size: 1.4rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
-  }
-
-  ul {
-    margin-bottom: 1.5rem;
-    margin-left: 1.2rem;
-
-    li {
-      margin-bottom: .5rem;
-    }
-  }
-
-  .btn {
-    justify-content: center;
-    margin-top: auto;
-    width: 100%;
-  }
-}
-
-// Botões refinados
-.btn, .btn-main {
-  display: inline-flex;
-  align-items: center;
-  background: $primary;
-  border: none;
-  border-radius: 9999px;
-  box-shadow: 0 2px 8px rgba($primary, 0.12);
+// Hero
+.hero {
+  padding: 60px 20px;
+  background: linear-gradient(135deg, $primary 0%, $secondary 100%);
   color: #fff;
-  cursor: pointer;
-  font-weight: 600;
-  gap: .5rem;
-  padding: .75rem 1.25rem;
-  transition: transform .2s, box-shadow .2s, background .2s;
-
-  &:hover, &:focus {
-    background: linear-gradient(90deg, $primary 60%, $secondary 100%);
-    box-shadow: 0 8px 16px rgba($primary, 0.18);
-    outline: 3px solid $yellow;
-    outline-offset: 2px;
-    transform: scale(1.04);
-  }
-
-  &:active {
-    transform: scale(0.97);
-  }
-}
-
-// Responsividade para botões
-@media (width <= 640px) {
-  .btn, .btn-main {
-    justify-content: center;
-    width: 100%;
-  }
-}
-
-// ==================== ESPAÇAMENTOS ====================
-body {
-  margin: 0;
-  padding: 0;
-}
-
-section {
-  margin-bottom: 56px;
-  padding: 32px 5vw;
-}
-
-@media (width <= 640px) {
-  section {
-    margin-bottom: 36px;
-    padding: 22px 3vw;
-  }
-}
-
-h1, h2, h3 {
-  margin-bottom: 18px;
-  margin-top: 0;
-}
-
-h1 {
-  margin-bottom: 22px;
-}
-
-h2 {
-  margin-bottom: 18px;
-}
-
-h3 {
-  margin-bottom: 12px;
-}
-
-.cards {
-  gap: 32px;
-  margin-bottom: 0;
-}
-
-.card {
-  margin-bottom: 0;
-  padding: 2.2rem 1.5rem 2rem;
-}
-
-.card ul {
-  margin-bottom: 1.5rem;
-  margin-left: 1.2rem;
-  padding-left: 0.8rem;
-}
-
-.card ul li {
-  margin-bottom: 0.6rem;
-}
-
-.btn, .btn-main, .btn-cta {
-  margin-bottom: 0.2rem;
-  margin-top: 1.2rem;
-}
-
-footer.center {
-  margin-top: 0;
-  padding: 38px 20px 24px;
-}
-
-// Espaço extra entre cards de depoimentos
-#depoimentos .cards {
-  margin-bottom: 0;
-  margin-top: 18px;
-}
-
-// Espaço entre FAQ
-#faq details {
-  margin-bottom: 1.2rem;
-}
-
-// Espaço para .tip e .steps
-.tip {
-  margin: 0 auto 24px;
-}
-
-.steps {
-  margin-bottom: 0;
-}
-
-// Contraste e foco visível global
-:focus-visible {
-  outline: 3px solid $yellow !important;
-  outline-offset: 2px;
-}
-
-// Ajuste para FAQ
-#faq details {
-  margin-bottom: 1rem;
-}
-
-// Ajuste para .tip
-.tip {
-  margin: 0 auto 20px;
-  max-width: 760px;
   text-align: center;
+
+  .hero-logo {
+    display: block;
+    width: 160px;
+    height: 160px;
+    margin: 0 auto 24px;
+    border-radius: 50%;
+  }
+
+  .lead {
+    margin-bottom: 32px;
+    font-size: 1.2rem;
+    opacity: 0.9;
+  }
+}
+
+// Navegação
+.main-nav {
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  padding: 12px 0;
+  border-bottom: 1px solid $border;
+  background: rgb(255 255 255 / 95%);
+  backdrop-filter: blur(10px);
+}
+
+.main-nav ul {
+  display: flex;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  justify-content: center;
+}
+
+.main-nav li {
+  margin: 0 16px;
+}
+
+.main-nav a {
+  position: relative;
+  padding: 8px 16px;
+  color: $text;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+.main-nav a:hover, .main-nav a:focus {
+  color: $primary;
+}
+
+.main-nav a::after {
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  width: 100%;
+  height: 2px;
+  background: $primary;
+  transition: transform 0.3s;
+  transform: translateX(-50%) scaleX(0);
+  content: '';
+}
+
+.main-nav a:hover::after, .main-nav a:focus::after {
+  transform: translateX(-50%) scaleX(1);
+}
+
+// Preços
+.price {
+  margin: 16px 0;
+  color: $primary;
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+// Dicas
+.tip {
+  padding: 12px 16px;
+  margin: 16px 0;
+  border-left: 4px solid $yellow;
+  background: rgba($yellow, 0.1);
+  color: $text;
+  font-style: italic;
 }
 
 // Footer
 footer.center {
-  background: $card;
-  border-top: 1px solid $border;
-  color: $text;
-  font-size: .95rem;
-  padding: 38px 20px;
-} 
-
-// Logo do hero
-.hero-logo {
-  display: block;
-  background: #fff;
-  border-radius: 1.2rem;
-  box-shadow: 0 2px 12px rgb(0 0 0 / 10%);
-  height: 120px;
-  margin: 0 auto 1.5rem;
-  max-width: 32vw;
-  object-fit: contain;
-  transition: box-shadow .2s;
-  width: 120px;
-}
-
-@media (width >= 640px) {
-  .hero {
-    display: flex;
-    align-items: center;
-    gap: 2.5rem;
-    padding: 4rem 5vw;
-  }
-
-  .hero-logo {
-    align-self: flex-start;
-    float: none;
-    margin: 0 2.5rem 0 0;
-  }
-
-  .hero > div {
-    flex: 1;
-  }
-}
-
-// Menu fixo
-.main-nav {
-  position: sticky;
-  top: 0;
-  background: #fff;
-  border-bottom: 1px solid $border;
-  box-shadow: 0 2px 8px rgb(0 0 0 / 4%);
-  padding: 0.5rem 5vw;
-  z-index: 100;
-
-  ul {
-    display: flex;
-    gap: 2rem;
-    justify-content: center;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
+  padding: 32px 20px;
+  margin-top: 60px;
+  background: $text;
+  color: #fff;
+  text-align: center;
 
   a {
-    border-bottom: 2px solid transparent;
-    color: $primary-dark;
-    font-size: 1.08rem;
-    font-weight: 600;
-    padding: .5rem 0;
-    transition: border .2s, color .2s;
+    color: $secondary;
+    text-decoration: underline;
 
     &:hover, &:focus {
-      border-bottom: 2px solid $primary;
-      color: $primary;
-      outline: none;
+      color: #fff;
     }
   }
 }
 
-// Destaque do plano recomendado
-.card-destaque {
-  position: relative;
-  background: linear-gradient(90deg, #f0fdf4 60%, #e0f7fa 100%);
-  border: 2.5px solid $primary;
-  box-shadow: 0 4px 18px rgba($primary, .10);
-}
-
-.badge {
+// Skip link
+.skip-link {
   position: absolute;
-  top: -18px;
-  left: 50%;
+  top: 8px;
+  left: -9999px;
+  z-index: 1001;
+  padding: 8px 16px;
   background: $primary;
-  border-radius: 999px;
-  box-shadow: 0 2px 8px rgba($primary, .13);
   color: #fff;
-  font-size: .92rem;
-  font-weight: 700;
-  letter-spacing: 0.02em;
-  padding: 0.3em 1.1em;
-  transform: translateX(-50%);
-  z-index: 2;
-}
+  font-weight: 600;
+  text-decoration: none;
 
-// Botão CTA
-.btn-cta {
-  background: $yellow;
-  border: none;
-  box-shadow: 0 2px 8px rgba($yellow, 0.13);
-  color: $primary-dark;
-  font-weight: 700;
-  transition: background .2s, color .2s, box-shadow .2s, transform .2s;
-
-  &:hover, &:focus {
-    background: $primary;
-    box-shadow: 0 8px 16px rgba($primary, 0.18);
-    color: #fff;
-    outline: 3px solid $yellow;
-    outline-offset: 2px;
-    transform: scale(1.04);
-  }
-
-  &:active {
-    transform: scale(0.97);
+  &:focus {
+    left: 8px;
   }
 }
 
-// Responsividade do menu
-@media (width <= 640px) {
-  .main-nav ul {
-    font-size: .98rem;
-    gap: 1rem;
+// Responsividade
+@media (width >= 768px) {
+  .cards {
+    display: grid;
+    gap: 24px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   }
-} 
 
-// ==================== ANIMAÇÕES ====================
-@keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(32px); }
-  to { opacity: 1; transform: none; }
-}
+  .hero {
+    padding: 80px 40px;
 
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
+    h1 {
+      font-size: 3rem;
+    }
 
-@keyframes pulse {
-  0% { box-shadow: 0 0 0 0 rgba($primary,0.18); }
-  70% { box-shadow: 0 0 0 16px rgba($primary,0); }
-  100% { box-shadow: 0 0 0 0 rgba($primary,0); }
-}
+    .lead {
+      font-size: 1.3rem;
+    }
+  }
 
-.fade-in {
-  animation: fadeIn .9s cubic-bezier(.4,0,.2,1) forwards;
-  opacity: 0;
-}
+  section {
+    padding: 48px 20px;
+  }
 
-.slide-in-up {
-  animation: fadeInUp .9s cubic-bezier(.4,0,.2,1) forwards;
-  opacity: 0;
-}
+  .main-nav {
+    padding: 16px 0;
 
-.cascade {
-  opacity: 0;
-}
-
-.cascade.visible {
-  animation: fadeInUp .8s cubic-bezier(.4,0,.2,1) forwards;
-}
-
-// ==================== HIERARQUIA VISUAL ====================
-.hero h1 {
-  color: $primary-dark;
-  font-size: clamp(2.2rem, 5vw, 3.2rem);
-  font-weight: 800;
-  letter-spacing: -1px;
-  line-height: 1.1;
-  margin-bottom: 1.1rem;
-  text-shadow: 0 2px 8px rgba($primary,0.04);
-}
-
-.hero .lead {
-  color: #3b3b3b;
-  font-size: clamp(1.1rem, 2vw, 1.4rem);
-  margin-bottom: 2.2rem;
-  max-width: 40rem;
-}
-
-.price {
-  color: $primary;
-  font-size: 2rem;
-  font-weight: 800;
-  letter-spacing: -1px;
-  margin-bottom: 1rem;
-}
-
-.card-destaque {
-  position: relative;
-  animation: pulse 1.8s infinite;
-  background: linear-gradient(90deg, #f0fdf4 60%, #e0f7fa 100%);
-  border: 2.5px solid $primary;
-  box-shadow: 0 4px 18px rgba($primary, .13);
-}
-
-.badge {
-  position: absolute;
-  top: -18px;
-  left: 50%;
-  animation: fadeIn .8s .2s backwards;
-  background: $primary;
-  border-radius: 999px;
-  box-shadow: 0 2px 8px rgba($primary, .13);
-  color: #fff;
-  font-size: .98rem;
-  font-weight: 800;
-  letter-spacing: 0.02em;
-  padding: 0.35em 1.2em;
-  transform: translateX(-50%);
-  z-index: 2;
-}
-
-// Animação para logo
-.hero-logo {
-  animation: fadeInUp 1.1s cubic-bezier(.4,0,.2,1) both;
-}
-
-// Animação para cards e depoimentos
-.card, .avatar {
-  transition: box-shadow .2s, transform .2s;
-}
-
-.card.visible {
-  animation: fadeInUp .8s cubic-bezier(.4,0,.2,1) both;
-}
-
-.avatar {
-  animation: fadeIn .8s .2s backwards;
-}
-
-// Botão CTA destacado
-.btn-cta {
-  box-shadow: 0 4px 16px rgba($yellow, 0.13);
-  font-size: 1.15rem;
-  font-weight: 800;
-  letter-spacing: 0.01em;
-  padding: 1rem 2.2rem;
-}
-
-// Menu fixo com sublinhado animado
-.main-nav a {
-  position: relative;
-  overflow: hidden;
-}
-
-.main-nav a::after {
-  display: block;
-  position: absolute; right: 0; bottom: 0;
-  left: 0;
-  background: $primary;
-  content: '';
-  height: 2px;
-  transform: scaleX(0);
-  transition: transform .2s;
-}
-
-.main-nav a:hover::after, .main-nav a:focus::after {
-  transform: scaleX(1);
-} 
-
-// Microinterações em cards
-.card {
-  transition: box-shadow .22s cubic-bezier(.4,0,.2,1), transform .18s cubic-bezier(.4,0,.2,1);
-
-  &:hover, &:focus-within {
-    box-shadow: 0 8px 32px rgba($primary, 0.13), 0 2px 12px rgb(0 0 0 / 7%);
-    transform: translateY(-4px) scale(1.015);
-    z-index: 2;
+    li {
+      margin: 0 24px;
+    }
   }
 }
 
-// Microinteração em depoimentos
-#depoimentos .card {
-  transition: box-shadow .22s cubic-bezier(.4,0,.2,1), transform .18s cubic-bezier(.4,0,.2,1);
+@media (width >= 1024px) {
+  .hero {
+    padding: 100px 60px;
 
-  &:hover, &:focus-within {
-    box-shadow: 0 8px 32px rgba($primary-dark, 0.10), 0 2px 12px rgb(0 0 0 / 7%);
-    transform: translateY(-3px) scale(1.012);
+    h1 {
+      font-size: 3.5rem;
+    }
+  }
+
+  section {
+    padding: 64px 40px;
   }
 }
 
-// Animação de clique em botões
-.btn, .btn-main, .btn-cta {
-  transition: transform .13s cubic-bezier(.4,0,.2,1), box-shadow .18s, background .18s, color .18s;
-
-  &:active {
-    box-shadow: 0 2px 8px rgba($primary, 0.10);
-    transform: scale(0.96);
-  }
-}
-
-// Foco visível em inputs
-input:focus, textarea:focus, select:focus {
-  box-shadow: 0 0 0 2px $yellow;
-  outline: 2.5px solid $primary;
+// Foco visível
+:focus-visible {
+  outline: 3px solid $yellow;
   outline-offset: 2px;
-  transition: box-shadow .18s;
 }
 
-// Transições suaves em links
-a {
-  transition: color .18s, border .18s, background .18s;
+// Reduzir movimento
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+
+  .card {
+    transform: none;
+    opacity: 1;
+  }
 } 

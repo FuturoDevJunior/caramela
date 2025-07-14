@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://caramela.netlify.app/sitemap.xml 

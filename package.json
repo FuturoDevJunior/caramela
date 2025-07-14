@@ -1,5 +1,45 @@
 {
+  "name": "gringo-ia-coder-landing",
+  "version": "1.0.0",
+  "description": "Landing page profissional para serviços de automação em Python, bots de WhatsApp e monitoramento de preços para PMEs brasileiras",
+  "keywords": [
+    "automação",
+    "python",
+    "bot-whatsapp",
+    "pme",
+    "landing-page",
+    "seo",
+    "performance",
+    "acessibilidade"
+  ],
+  "author": {
+    "name": "Gringo IA Coder",
+    "email": "contato@gringoiacoder.com",
+    "url": "https://caramela.netlify.app"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/FuturoDevJunior/caramela.git"
+  },
+  "homepage": "https://caramela.netlify.app",
+  "bugs": {
+    "url": "https://github.com/FuturoDevJunior/caramela/issues"
+  },
   "type": "module",
+  "scripts": {
+    "dev": "npm run watch:css",
+    "build": "npm run build:css",
+    "build:css": "sass assets/css/styles.scss:assets/css/styles.min.css --no-source-map --style=compressed",
+    "watch:css": "sass --watch assets/css/styles.scss:assets/css/styles.min.css",
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx,.html",
+    "lint:fix": "eslint . --ext .js,.jsx,.ts,.tsx,.html --fix",
+    "stylelint": "stylelint 'assets/css/**/*.scss'",
+    "stylelint:fix": "stylelint 'assets/css/**/*.scss' --fix",
+    "format": "prettier --write .",
+    "prepare": "husky",
+    "test": "npm run lint && npm run stylelint && npm run build:css"
+  },
   "devDependencies": {
     "@babel/eslint-parser": "^7.28.0",
     "@babel/preset-env": "^7.28.0",
@@ -19,15 +59,6 @@
     "stylelint-order": "^7.0.0",
     "stylelint-scss": "^6.12.1"
   },
-  "scripts": {
-    "build:css": "sass assets/css/styles.scss:assets/css/styles.min.css --no-source-map --style=compressed",
-    "watch:css": "sass --watch assets/css/styles.scss:assets/css/styles.min.css",
-    "lint": "eslint . --ext .js,.jsx,.ts,.tsx,.html",
-    "lint:fix": "eslint . --ext .js,.jsx,.ts,.tsx,.html --fix",
-    "stylelint": "stylelint 'assets/css/**/*.scss'",
-    "stylelint:fix": "stylelint 'assets/css/**/*.scss' --fix",
-    "prepare": "husky install"
-  },
   "lint-staged": {
     "*.{js,jsx,ts,tsx,html}": [
       "eslint --fix"
@@ -36,5 +67,9 @@
       "stylelint --fix",
       "prettier --write"
     ]
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=8.0.0"
   }
 }

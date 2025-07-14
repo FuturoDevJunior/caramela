@@ -1,0 +1,19 @@
+name: Lighthouse CI
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  lighthouse:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+      - run: npm ci
+      - run: npm run build:css
+      - run: npx serve -s . -l 8080 &
+      - run: npx lhci autorun --collect.url=http://localhost:8080 --assert.preset=lighthouse:recommended
