@@ -7,4 +7,40 @@ $bg: #f9fafb;
 $text: #0f172a;
 $card: #fff;
 $border: #e5e7eb;
+
+// Espaçamentos
+$space-xs: 4px;
+$space-sm: 8px;
+$space-md: 16px;
+$space-lg: 24px;
+$space-xl: 32px;
+$space-xxl: 48px;
+
+// Fontes
+$font-xs: 0.85rem;
+$font-sm: 1rem;
+$font-md: 1.15rem;
+$font-lg: 1.4rem;
+$font-xl: 2.5rem;
+$font-xxl: 3.5rem;
+$font-family: 'Inter', sans-serif;
+$font-weight-normal: 400;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+
+// Bordas e radius
 $radius: 14px;
+$radius-sm: 8px;
+$radius-lg: 24px;
+
+// Sombra
+$shadow-card: 0 2px 12px rgb(0 0 0 / 7%);
+$shadow-card-lg: 0 8px 24px rgb(0 0 0 / 12%);
+$shadow-btn: 0 2px 8px rgba($primary, 0.12);
+$shadow-btn-lg: 0 4px 16px rgba($primary, 0.18);
+
+// Breakpoints
+$bp-xs: 480px;
+$bp-sm: 768px;
+$bp-md: 1024px;
+$bp-lg: 1280px;
