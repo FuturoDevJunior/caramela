@@ -1,0 +1,21 @@
+// Hero
+.hero {
+  padding: 60px 20px;
+  background: linear-gradient(135deg, $primary 0%, $secondary 100%);
+  color: #fff;
+  text-align: center;
+
+  .hero-logo {
+    display: block;
+    width: 160px;
+    height: 160px;
+    margin: 0 auto 24px;
+    border-radius: 50%;
+  }
+
+  .lead {
+    margin-bottom: 32px;
+    font-size: 1.2rem;
+    opacity: 0.9;
+  }
+}

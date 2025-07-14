@@ -1,0 +1,40 @@
+// Tipografia global
+h1 {
+  margin-bottom: 16px;
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+h2 {
+  margin-bottom: 12px;
+  font-size: 1.4rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+h3 {
+  margin-bottom: 12px;
+  font-size: 1.15rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.3s;
+
+  &:focus {
+    outline: 3px solid $yellow;
+    outline-offset: 2px;
+  }
+}
+
+li {
+  // estilo global para li
+}
+
+summary {
+  // estilo global para summary
+}
