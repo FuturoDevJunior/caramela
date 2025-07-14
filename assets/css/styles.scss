@@ -1,17 +1,17 @@
 // Imports organizados por ordem de cascata
 // 1. Variáveis primeiro
-@import 'base/variables';
+@use 'base/variables';
 
 // 2. Reset e base
-@import 'base/reset';
-@import 'base/typography';
+@use 'base/reset';
+@use 'base/typography';
 
 // 3. Componentes (menos específicos primeiro)
-@import 'components/buttons';
-@import 'components/cards';
+@use 'components/buttons';
+@use 'components/cards';
 
 // 4. Layout (mais específicos por último)
-@import 'layout/navigation';
-@import 'layout/hero';
-@import 'layout/sections';
-@import 'layout/responsive';
+@use 'layout/navigation';
+@use 'layout/hero';
+@use 'layout/sections';
+@use 'layout/responsive';

@@ -85,45 +85,45 @@
 {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  "mainEntity": [
+  "mainEntity":[
     {
-      "@type": "Question",
-      "name": "Preciso entender de tecnologia?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Não. Basta explicar o que toma tempo hoje; eu entrego o bot ou script rodando em nuvem."
+      "@type":"Question",
+      "name":"Preciso entender de tecnologia?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"Não! A automação é 100% sem código; você só segue um passo-a-passo guiado."
       }
     },
     {
-      "@type": "Question",
-      "name": "Como é o pagamento?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "PIX: 50 % p/ iniciar, 50 % na entrega. Nota fiscal RET."
+      "@type":"Question",
+      "name":"Meus dados ficam seguros e em conformidade com a LGPD?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"Sim. Coletamos apenas dados essenciais, armazenamos de forma criptografada e você pode solicitar acesso, correção ou exclusão pelo e-mail dpo@exemplo.com."
       }
     },
     {
-      "@type": "Question",
-      "name": "E se mudar meu processo?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Ajuste grátis 15 dias; depois, manutenção opcional (R$ 600/mês)."
+      "@type":"Question",
+      "name":"Posso pedir reembolso?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"Você pode desistir em até 7 dias (art. 49 do CDC). Após esse prazo não há reembolso."
       }
     },
     {
-      "@type": "Question",
-      "name": "Onde ficam meus dados?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Servidor AWS São Paulo, criptografia em trânsito e em repouso, política LGPD."
+      "@type":"Question",
+      "name":"Recebo nota fiscal?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"Emitimos NFS-e no padrão nacional para qualquer contratação."
       }
     },
     {
-      "@type": "Question",
-      "name": "Qual ROI típico?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Clientes economizam 10-40 h/mês ou aumentam vendas em até 20 %. Use a calculadora acima."
+      "@type":"Question",
+      "name":"Vocês usam cookies?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"Só os necessários para funcionar e os de melhoria, mas pedimos seu consentimento antes. Você pode gerenciar no banner de cookies."
       }
     }
   ]
@@ -308,13 +308,57 @@
     </section>
 
     <!-- FAQ -->
-    <section id="faq" aria-labelledby="faq-heading" role="region">
-      <h2 class="center" id="faq-heading">Perguntas Frequentes</h2>
-      <details><summary>Preciso entender de tecnologia?</summary><p>Não. Basta explicar o que toma tempo hoje; eu entrego o bot ou script rodando em nuvem.</p></details>
-      <details><summary>Como é o pagamento?</summary><p>PIX: 50 % p/ iniciar, 50 % na entrega. Nota fiscal RET.</p></details>
-      <details><summary>E se mudar meu processo?</summary><p>Ajuste grátis 15 dias; depois, manutenção opcional (R$ 600/mês).</p></details>
-      <details><summary>Onde ficam meus dados?</summary><p>Servidor AWS São Paulo, criptografia em trânsito e em repouso, política LGPD.</p></details>
-      <details><summary>Qual ROI típico?</summary><p>Clientes economizam 10-40 h/mês ou aumentam vendas em até 20 %. Use a calculadora acima.</p></details>
+    <section id="faq" aria-label="Perguntas Frequentes">
+      <h2 class="faq-title">Perguntas Frequentes</h2>
+      <div class="faq-list">
+        <details>
+          <summary id="faq1" aria-expanded="false" aria-controls="faq1-content" tabindex="0" class="faq-summary">
+            Preciso entender de tecnologia?
+            <span class="faq-icon" aria-hidden="true">&#9660;</span>
+          </summary>
+          <div id="faq1-content" role="region" aria-labelledby="faq1" class="faq-content">
+            Não! A automação é 100% sem código; você só segue um passo-a-passo guiado.
+          </div>
+        </details>
+        <details>
+          <summary id="faq2" aria-expanded="false" aria-controls="faq2-content" tabindex="0" class="faq-summary">
+            Meus dados ficam seguros e em conformidade com a LGPD?
+            <span class="faq-icon" aria-hidden="true">&#9660;</span>
+          </summary>
+          <div id="faq2-content" role="region" aria-labelledby="faq2" class="faq-content">
+            Sim. Coletamos apenas dados essenciais, armazenamos de forma criptografada
+            e você pode solicitar <strong>acesso, correção ou exclusão</strong> pelo e-mail
+            <a href="mailto:dpo@exemplo.com">dpo@exemplo.com</a>.
+          </div>
+        </details>
+        <details>
+          <summary id="faq3" aria-expanded="false" aria-controls="faq3-content" tabindex="0" class="faq-summary">
+            Posso pedir reembolso?
+            <span class="faq-icon" aria-hidden="true">&#9660;</span>
+          </summary>
+          <div id="faq3-content" role="region" aria-labelledby="faq3" class="faq-content">
+            Você pode desistir em até 7 dias (art. 49 do CDC). Após esse prazo não há reembolso.
+          </div>
+        </details>
+        <details>
+          <summary id="faq4" aria-expanded="false" aria-controls="faq4-content" tabindex="0" class="faq-summary">
+            Recebo nota fiscal?
+            <span class="faq-icon" aria-hidden="true">&#9660;</span>
+          </summary>
+          <div id="faq4-content" role="region" aria-labelledby="faq4" class="faq-content">
+            Emitimos NFS-e no padrão nacional para qualquer contratação.
+          </div>
+        </details>
+        <details>
+          <summary id="faq5" aria-expanded="false" aria-controls="faq5-content" tabindex="0" class="faq-summary">
+            Vocês usam cookies?
+            <span class="faq-icon" aria-hidden="true">&#9660;</span>
+          </summary>
+          <div id="faq5-content" role="region" aria-labelledby="faq5" class="faq-content">
+            Só os necessários para funcionar e os de melhoria, mas pedimos seu consentimento antes. Você pode gerenciar no banner de cookies.
+          </div>
+        </details>
+      </div>
     </section>
   </main>
 
