@@ -1,0 +1,40 @@
+{
+  "type": "module",
+  "devDependencies": {
+    "@babel/eslint-parser": "^7.28.0",
+    "@babel/preset-env": "^7.28.0",
+    "@eslint/css": "^0.10.0",
+    "@eslint/js": "^9.31.0",
+    "eslint-config-prettier": "^10.1.5",
+    "eslint-plugin-html": "^8.1.3",
+    "eslint-plugin-prettier": "^5.5.1",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.1.2",
+    "prettier": "^3.6.2",
+    "sass": "^1.89.2",
+    "stylelint": "^16.21.1",
+    "stylelint-config-recommended-scss": "^15.0.1",
+    "stylelint-config-standard": "^38.0.0",
+    "stylelint-config-standard-scss": "^15.0.1",
+    "stylelint-order": "^7.0.0",
+    "stylelint-scss": "^6.12.1"
+  },
+  "scripts": {
+    "build:css": "sass assets/css/styles.scss:assets/css/styles.min.css --no-source-map --style=compressed",
+    "watch:css": "sass --watch assets/css/styles.scss:assets/css/styles.min.css",
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx,.html",
+    "lint:fix": "eslint . --ext .js,.jsx,.ts,.tsx,.html --fix",
+    "stylelint": "stylelint 'assets/css/**/*.scss'",
+    "stylelint:fix": "stylelint 'assets/css/**/*.scss' --fix",
+    "prepare": "husky install"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx,html}": [
+      "eslint --fix"
+    ],
+    "*.{css,scss}": [
+      "stylelint --fix",
+      "prettier --write"
+    ]
+  }
+}

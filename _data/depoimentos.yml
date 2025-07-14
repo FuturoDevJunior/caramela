@@ -1,0 +1,20 @@
+- nome: Ana Paula
+  cargo: Fundadora
+  empresa: Loja de Roupas Flor
+  foto: /assets/img/ana-paula.jpg
+  texto: "O bot do Gringo automatizou meu WhatsApp e me fez economizar 20h/mês. Atendimento rápido e transparente!"
+  linkedin: https://linkedin.com/in/anapaula-lojaflor
+
+- nome: Carlos Silva
+  cargo: Dono
+  empresa: Pizzaria Sabor
+  foto: /assets/img/carlos-silva.jpg
+  texto: "A automação aumentou meus pedidos em 30%. Recomendo para todo pequeno empresário!"
+  linkedin: https://linkedin.com/in/carlossilva-pizza
+
+- nome: Juliana Souza
+  cargo: Gerente de Operações
+  empresa: Papelaria Criativa
+  foto: /assets/img/juliana-souza.jpg
+  texto: "O monitor de preços do Gringo me deu clareza para ajustar meus valores e aumentei o lucro em 18% no trimestre."
+  linkedin: https://linkedin.com/in/julianasouza 

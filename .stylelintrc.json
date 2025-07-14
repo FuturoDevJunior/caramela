@@ -1,0 +1,12 @@
+{
+  "extends": ["stylelint-config-recommended-scss"],
+  "plugins": ["stylelint-order"],
+  "rules": {
+    "no-duplicate-selectors": true,
+    "color-hex-length": "short",
+    "order/properties-order": [
+      ["display", "position", "top", "right", "bottom", "left"],
+      { "unspecified": "bottomAlphabetical" }
+    ]
+  }
+} 
