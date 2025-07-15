@@ -1,97 +1,61 @@
 @use '../base/variables' as *;
 
 // Botões
-.btn {
-  display: inline-block;
-  width: 100%;
-  padding: 16px 0;
-  border: none;
+.btn,
+.btn-main,
+.btn-cta {
+  min-height: 48px;
   border-radius: $radius;
-  background: $primary;
-  color: #fff;
   font-size: 1.1rem;
-  font-weight: 600;
-  cursor: pointer;
   transition:
-    background 0.25s,
-    box-shadow 0.15s,
-    transform 0.15s;
-  box-shadow: 0 2px 8px rgba($primary, 0.12);
-
-  &:hover,
-  &:focus {
-    background: linear-gradient(90deg, $primary 60%, $secondary 100%);
-    transform: translateY(-2px);
-    outline: 2px solid $yellow;
-    outline-offset: 2px;
-    box-shadow: 0 4px 16px rgba($primary, 0.25);
-  }
-
-  &:active {
-    transform: translateY(0);
-  }
+    background 0.2s,
+    box-shadow 0.2s,
+    transform 0.1s;
+  outline: none;
 }
 
 .btn-main {
-  display: inline-block;
-  width: 100%;
-  padding: 16px 0;
-  border: none;
-  border-radius: $radius;
-  background: $primary;
+  background: #25d366; // Verde WhatsApp
   color: #fff;
-  font-size: 1.1rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition:
-    background 0.25s,
-    box-shadow 0.15s,
-    transform 0.15s;
-  box-shadow: 0 2px 8px rgba($primary, 0.12);
+}
 
-  &:hover,
-  &:focus {
-    background: linear-gradient(90deg, $primary 60%, $secondary 100%);
-    transform: translateY(-2px);
-    outline: 2px solid $yellow;
-    outline-offset: 2px;
-    box-shadow: 0 4px 16px rgba($primary, 0.25);
-  }
+.btn-main:focus {
+  outline: 2px solid $yellow;
+  outline-offset: 2px;
+}
 
-  &:active {
-    transform: translateY(0);
-  }
+.btn-main:hover,
+.btn-main:focus {
+  background: #1ebe54;
+  box-shadow: 0 4px 16px rgb(37 211 102 / 18%);
+}
+
+.btn-main:active {
+  transform: scale(0.97);
+  box-shadow: 0 2px 8px rgba($primary, 0.18) inset;
 }
 
 .btn-cta {
-  display: inline-block;
-  width: 100%;
-  padding: 16px 0;
-  border: none;
-  border-radius: $radius;
-  background: $secondary;
+  background: $primary;
   color: #fff;
-  font-size: 1.1rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition:
-    background 0.25s,
-    box-shadow 0.15s,
-    transform 0.15s;
-  box-shadow: 0 2px 8px rgba($secondary, 0.12);
+  font-weight: 700;
+}
 
-  &:hover,
-  &:focus {
-    background: linear-gradient(90deg, $secondary 60%, $primary 100%);
-    transform: translateY(-2px);
-    outline: 2px solid $yellow;
-    outline-offset: 2px;
-    box-shadow: 0 4px 16px rgba($secondary, 0.25);
-  }
+.btn-cta:focus {
+  outline: 2px solid $yellow;
+  outline-offset: 2px;
+}
 
-  &:active {
-    transform: translateY(0);
-  }
+.btn-cta:hover,
+.btn-cta:focus {
+  background: $primary-dark;
+  box-shadow: 0 6px 24px rgba($primary, 0.12);
+  transform: translateY(-2px) scale(1.03);
+}
+
+.btn-cta:active {
+  transform: scale(0.97);
+  box-shadow: 0 2px 8px rgba($primary, 0.18) inset;
 }
 
 // WhatsApp flutuante
@@ -103,16 +67,16 @@
   display: flex;
   padding: 14px 22px;
   border-radius: $radius;
-  background: $primary;
+  background: #25d366;
   color: #fff;
   font-size: 1.1rem;
   animation: pulse 1.6s infinite;
   align-items: center;
   box-shadow: 0 4px 16px rgb(0 0 0 / 18%);
 
+  &:hover,
   &:focus {
-    outline: 3px solid $yellow;
-    outline-offset: 2px;
+    background: #1ebe54;
   }
 }
 
