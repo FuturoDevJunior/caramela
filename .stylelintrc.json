@@ -162,6 +162,12 @@
     ],
     "scss/at-rule-no-unknown": true,
     "scss/selector-no-redundant-nesting-selector": true,
+    "selector-class-pattern": [
+      "^[a-z][a-z0-9]*(?:-[a-z0-9]+)*(?:__[a-z0-9]+)?(?:--[a-z0-9]+)?$",
+      {
+        "message": "Class names must follow kebab-case ou BEM (block__elem--mod) convention"
+      }
+    ],
     "no-duplicate-selectors": true,
     "declaration-block-no-duplicate-properties": true,
     "declaration-block-no-shorthand-property-overrides": true,

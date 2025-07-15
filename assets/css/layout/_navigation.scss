@@ -7,8 +7,7 @@
   z-index: 1020; // abaixo do skip-link e do cookie-banner
   width: 100%;
   padding: 12px 0;
-  background: rgb(255 255 255 / 95%);
-  backdrop-filter: blur(8px); // compatível Safari
+  background: rgb(255 255 255 / 95%); // compatível Safari
   backdrop-filter: blur(8px);
   box-shadow: 0 2px 12px rgb(0 0 0 / 4%);
 }
