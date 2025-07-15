@@ -99,7 +99,7 @@
       "name":"Meus dados ficam seguros e em conformidade com a LGPD?",
       "acceptedAnswer":{
         "@type":"Answer",
-        "text":"Sim. Coletamos apenas dados essenciais, armazenamos de forma criptografada e você pode solicitar acesso, correção ou exclusão pelo e-mail dpo@exemplo.com."
+        "text":"Sim. Coletamos somente o essencial, armazenamos de forma criptografada e você pode solicitar qualquer direito pelo e-mail <a href=\"mailto:dpo@exemplo.com\">dpo@exemplo.com</a>."
       }
     },
     {
@@ -123,7 +123,7 @@
       "name":"Vocês usam cookies?",
       "acceptedAnswer":{
         "@type":"Answer",
-        "text":"Só os necessários para funcionar e os de melhoria, mas pedimos seu consentimento antes. Você pode gerenciar no banner de cookies."
+        "text":"Usamos apenas cookies essenciais e de análise, mas pedimos seu consentimento antes. Você pode gerenciar no banner de cookies."
       }
     }
   ]
@@ -326,9 +326,7 @@
             <span class="faq-icon" aria-hidden="true">&#9660;</span>
           </summary>
           <div id="faq2-content" role="region" aria-labelledby="faq2" class="faq-content">
-            Sim. Coletamos apenas dados essenciais, armazenamos de forma criptografada
-            e você pode solicitar <strong>acesso, correção ou exclusão</strong> pelo e-mail
-            <a href="mailto:dpo@exemplo.com">dpo@exemplo.com</a>.
+            Sim. Coletamos apenas o essencial, armazenamos em servidores seguros e você pode exercer seus direitos de acesso, correção ou exclusão a qualquer momento pelo e-mail <a href="mailto:contato.ferreirag@outlook.com">contato.ferreirag@outlook.com</a>.
           </div>
         </details>
         <details>
@@ -351,19 +349,57 @@
         </details>
         <details>
           <summary id="faq5" aria-expanded="false" aria-controls="faq5-content" tabindex="0" class="faq-summary">
-            Vocês usam cookies?
+            Como gerencio cookies e meus dados?
             <span class="faq-icon" aria-hidden="true">&#9660;</span>
           </summary>
           <div id="faq5-content" role="region" aria-labelledby="faq5" class="faq-content">
-            Só os necessários para funcionar e os de melhoria, mas pedimos seu consentimento antes. Você pode gerenciar no banner de cookies.
+            Usamos apenas cookies essenciais e de análise, sempre com seu consentimento. Você pode gerenciar no banner de cookies ou solicitar qualquer direito pelo e-mail <a href="mailto:contato.ferreirag@outlook.com">contato.ferreirag@outlook.com</a>.
           </div>
         </details>
       </div>
     </section>
   </main>
 
+  <!-- COOKIE BANNER LGPD -->
+<div id="cookie-banner" role="dialog" aria-modal="true"
+     aria-label="Consentimento de Cookies" hidden>
+  <div class="cookie-content">
+    <p>Usamos cookies essenciais para funcionamento e cookies
+       de análise para melhorar sua experiência. Escolha abaixo:</p>
+    <button id="cookie-accept-all"  class="btn btn-main">
+      Aceitar todos
+    </button>
+    <button id="cookie-reject"      class="btn">
+      Rejeitar não essenciais
+    </button>
+    <button id="cookie-customize"   class="btn btn-cta">
+      Personalizar
+    </button>
+  </div>
+</div>
+<script type="module">
+  const banner   = document.getElementById('cookie-banner');
+  const consent  = localStorage.getItem('cookieConsent');
+  if (!consent) banner.hidden = false;
+  const setConsent = val => {
+    localStorage.setItem('cookieConsent', val);
+    banner.hidden = true;
+    /* habilite suas tags de analytics aqui somente se val==="all" */
+  };
+  document.getElementById('cookie-accept-all')
+          .addEventListener('click', () => setConsent('all'));
+  document.getElementById('cookie-reject')
+          .addEventListener('click', () => setConsent('essentials'));
+  document.getElementById('cookie-customize')
+          .addEventListener('click', () =>
+            alert('Configuração granular de cookies em breve.'));
+</script>
+
   <footer class="center">
-    © 2025 Gringo IA Coder · <a href="https://github.com/FuturoDevJunior" target="_blank" rel="noopener noreferrer">GitHub</a> · <a href="https://linkedin.com/in/devferreirag" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+    © 2025 RET Consultoria ·
+    <a href="sobre.html">Sobre</a> ·
+    <a href="privacidade.html">Privacidade & LGPD</a> ·
+    <a href="mailto:contato.ferreirag@outlook.com">contato.ferreirag@outlook.com</a>
   </footer>
 
   <!-- Botão flutuante WhatsApp -->
@@ -425,27 +461,42 @@ document.body.appendChild(waBtn);
     {
       "@type": "Question",
       "name": "Preciso entender de tecnologia?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Não. Basta explicar o que toma tempo hoje; eu entrego o bot ou script rodando em nuvem." }
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Não! A automação é 100% sem código; você só segue um passo-a-passo guiado."
+      }
     },
     {
       "@type": "Question",
-      "name": "Como é o pagamento?",
-      "acceptedAnswer": { "@type": "Answer", "text": "PIX: 50 % p/ iniciar, 50 % na entrega. Nota fiscal RET." }
+      "name": "Meus dados ficam seguros e em conformidade com a LGPD?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sim. Coletamos apenas o essencial, armazenamos em servidores seguros e você pode exercer seus direitos de acesso, correção ou exclusão a qualquer momento pelo e-mail contato.ferreirag@outlook.com."
+      }
     },
     {
       "@type": "Question",
-      "name": "E se mudar meu processo?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Ajuste grátis 15 dias; depois, manutenção opcional (R$ 600/mês)." }
+      "name": "Posso pedir reembolso?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Você pode desistir em até 7 dias (art. 49 do CDC). Após esse prazo não há reembolso."
+      }
     },
     {
       "@type": "Question",
-      "name": "Onde ficam meus dados?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Servidor AWS São Paulo, criptografia em trânsito e em repouso, política LGPD." }
+      "name": "Recebo nota fiscal?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Emitimos NFS-e no padrão nacional para qualquer contratação."
+      }
     },
     {
       "@type": "Question",
-      "name": "Qual ROI típico?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Clientes economizam 10-40 h/mês ou aumentam vendas em até 20 %. Use a calculadora acima." }
+      "name": "Como gerencio cookies e meus dados?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Usamos apenas cookies essenciais e de análise, sempre com seu consentimento. Você pode gerenciar no banner de cookies ou solicitar qualquer direito pelo e-mail contato.ferreirag@outlook.com."
+      }
     }
   ]
 }

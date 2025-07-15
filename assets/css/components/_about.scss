@@ -1,0 +1,29 @@
+#sobre {
+  padding: 2rem 0;
+  background: #fafafa;
+
+  h2 {
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+
+  .sobre-lista {
+    max-width: 720px;
+    padding-left: 1rem;
+    margin: 0 auto;
+
+    li {
+      margin: 0.75rem 0;
+      line-height: 1.5;
+    }
+
+    a {
+      text-decoration: underline;
+
+      &:focus {
+        outline: 2px solid #ffca28;
+        outline-offset: 2px;
+      }
+    }
+  }
+}
