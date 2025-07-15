@@ -1,8 +1,10 @@
 <!doctype html><html lang="pt-BR"><head>
 <meta charset="utf-8"><title>Política de Privacidade</title>
 <meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Saiba como coletamos, usamos e protegemos seus dados. Política de privacidade completa, LGPD, direitos do titular e contato DPO.">
 <link rel="stylesheet" href="styles.css">
 </head><body>
+<main role="main">
 <h1>Política de Privacidade</h1>
 <p>Coletamos apenas dados essenciais para atender e executar
    nossos serviços. A base legal é <strong>execução de contrato</strong>
@@ -24,22 +26,27 @@
 </li>
 </ul>
 <h2>Solicitar direitos LGPD</h2>
-<form action="mailto:dpo@exemplo.com" method="POST" enctype="text/plain">
-  <label>Nome: <input name="nome" required></label>
-  <label>E-mail: <input type="email" name="email" required></label>
-  <label>Direito:
-    <select name="direito" required>
-      <option value="acesso">Acesso aos dados</option>
-      <option value="correcao">Correção</option>
-      <option value="exclusao">Exclusão</option>
-      <option value="portabilidade">Portabilidade</option>
-      <option value="anonimizacao">Anonimização</option>
-      <option value="oposicao">Oposição</option>
-    </select>
-  </label>
-  <label>Detalhes:
-    <textarea name="detalhes"></textarea>
-  </label>
-  <button class="btn btn-main">Enviar</button>
+<form action="mailto:contato.ferreirag@outlook.com" method="POST" enctype="text/plain" role="form">
+  <fieldset>
+    <legend>Formulário de solicitação de direitos</legend>
+    <label for="nome">Nome:</label> <input id="nome" name="nome" required>
+    <label for="email">E-mail:</label> <input id="email" type="email" name="email" required>
+    <label for="direito">Direito:
+      <select id="direito" name="direito" required>
+        <option value="acesso">Acesso aos dados</option>
+        <option value="correcao">Correção</option>
+        <option value="exclusao">Exclusão</option>
+        <option value="portabilidade">Portabilidade</option>
+        <option value="anonimizacao">Anonimização</option>
+        <option value="oposicao">Oposição</option>
+      </select>
+    </label>
+    <label for="detalhes">Detalhes:
+      <textarea id="detalhes" name="detalhes"></textarea>
+    </label>
+    <button class="btn btn-main">Enviar</button>
+  </fieldset>
 </form>
+<p><a href="/">Voltar para Home</a></p>
+</main>
 </body></html> 

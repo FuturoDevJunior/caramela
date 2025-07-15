@@ -9,9 +9,13 @@ section {
   margin-left: auto;
 
   @media (width <= 600px) {
-    padding: 20px 8px;
-    margin-bottom: 32px;
+    padding: 28px 8px; // mais espaçamento em mobile
+    margin-bottom: 40px;
   }
+}
+
+section[id] {
+  scroll-margin-top: 96px;
 }
 
 .center {

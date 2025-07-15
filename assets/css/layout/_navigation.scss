@@ -2,15 +2,15 @@
 
 // Navegação
 .main-nav {
-  position: fixed;
+  position: relative;
   top: 0;
-  z-index: 1000;
+  z-index: 1020; // abaixo do skip-link e do cookie-banner
   width: 100%;
   padding: 12px 0;
-  border-bottom: 1px solid $border;
   background: rgb(255 255 255 / 95%);
+  backdrop-filter: blur(8px); // compatível Safari
   backdrop-filter: blur(8px);
-  backdrop-filter: blur(8px);
+  box-shadow: 0 2px 12px rgb(0 0 0 / 4%);
 }
 
 .main-nav ul {

@@ -4,6 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Página não encontrada | Automação sem Enrolação</title>
+  <meta name="description" content="Página não encontrada. Volte para a home ou entre em contato para suporte. Automação sem enrolação para PMEs.">
   <link rel="stylesheet" href="assets/css/styles.min.css">
   <style>
     body { display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh; background: #f9fafb; }
@@ -11,16 +12,19 @@
     .notfound h1 { font-size: 4rem; color: #16a34a; margin-bottom: 0.5em; }
     .notfound p { font-size: 1.2rem; margin-bottom: 2em; }
     .notfound .btn { background: #16a34a; color: #fff; padding: 1em 2em; border-radius: 999px; font-weight: 700; text-decoration: none; transition: background .2s; }
-    .notfound .btn:hover, .notfound .btn:focus { background: #15803d; }
+    .notfound .btn:hover, .notfound .btn:focus { background: #15803d; outline: 3px solid #facc15; outline-offset: 2px; }
     .notfound img { width: 90px; margin-bottom: 1.5em; }
   </style>
 </head>
 <body>
-  <div class="notfound">
-    <img src="assets/img/ret.png" alt="Logo Automação sem Enrolação">
-    <h1>404</h1>
-    <p>Ops! A página que você procura não foi encontrada.<br>Mas você pode voltar para a página inicial e automatizar sua PME sem enrolação!</p>
-    <a href="/" class="btn">Voltar para Home</a>
-  </div>
+  <main role="main">
+    <div class="notfound">
+      <img src="assets/img/ret.png" alt="Logo Automação sem Enrolação">
+      <h1>404</h1>
+      <p>Ops! A página que você procura não foi encontrada.<br>Mas você pode voltar para a página inicial e automatizar sua PME sem enrolação!</p>
+      <a href="/" class="btn" aria-label="Voltar para página inicial">Voltar para Home</a>
+      <p style="margin-top:1.5em;font-size:0.95em;">Precisa de ajuda? <a href="mailto:contato.ferreirag@outlook.com">Fale com o suporte</a></p>
+    </div>
+  </main>
 </body>
 </html> 

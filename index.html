@@ -40,6 +40,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" media="print" onload="this.media='all'">
 <link rel="stylesheet" href="assets/css/styles.min.css">
+<link rel="preconnect" href="https://outlook86643.api-us1.com">
 
 <!-- Microdados Schema.org avançados para SEO -->
 <script type="application/ld+json">
@@ -202,12 +203,12 @@
 
   <!-- HERO -->
   <header class="hero" role="banner">
-    <img src="assets/img/ret.png" alt="Logo Automação sem Enrolação - RET Tecnologia" width="160" height="160" class="hero-logo" fetchpriority="high" loading="eager">
-    <div>
+    <div class="hero-content">
+      <img src="assets/img/ret.png" alt="Logo Automação sem Enrolação - RET Tecnologia" width="160" height="160" class="hero-logo" fetchpriority="high" loading="eager">
       <h1>Automatize sua PME em dias, sem enrolação</h1>
       <p class="lead">Bots e scripts Python prontos em até <strong>3 dias</strong> para você vender mais e nunca mais perder tempo com tarefas manuais.</p>
-      <a href="#planos" class="btn btn-main" aria-label="Ver planos de automação">Ver Planos</a>
-      <a href="#planos" class="btn btn-cta" aria-label="Comece agora">Comece Agora</a>
+      <a href="#planos" class="btn btn-primary" aria-label="Ver Planos de Automação">Ver Planos</a>
+      <a href="#planos" class="btn btn-secondary" aria-label="Comece Agora">Comece Agora</a>
     </div>
   </header>
 
@@ -215,46 +216,46 @@
     <!-- PLANOS -->
     <section id="planos" aria-labelledby="planos-heading" role="region">
       <h2 class="center" id="planos-heading">Escolha seu Plano Ideal</h2>
-      <div class="cards">
-        <div class="card">
-          <h3><i class="fa-solid fa-bolt" aria-hidden="true"></i> Sprint 3 Dias</h3>
+      <ul class="pricing-grid">
+        <li class="plan-card">
+          <h3>Sprint 3 Dias</h3>
           <p class="price">R$ 2.400</p>
-          <ul>
+          <ul class="features">
             <li>Script único: adeus copiar-colar</li>
             <li>Seu bot funcionando em até 3 dias</li>
             <li>Vídeo-guia + suporte 15 dias</li>
           </ul>
-          <a class="btn btn-main mt-3" href="https://wa.me/5524998706745?text=Oi%20Gringo!%20Quero%20automatizar%20isto%3A" target="_blank" rel="noopener" aria-label="Contratar plano Sprint 3 Dias via WhatsApp">
-            <i class="fa-brands fa-whatsapp" aria-hidden="true"></i> Contratar no WhatsApp
+          <a class="cta" href="https://wa.me/5524998706745?text=Oi%20Gringo!%20Quero%20automatizar%20isto%3A" target="_blank" rel="noopener" aria-label="Contratar Plano Sprint 3 Dias via WhatsApp">
+            Contratar no WhatsApp
           </a>
-        </div>
-        <div class="card card-destaque" aria-label="Plano recomendado">
+        </li>
+        <li class="plan-card plan-card-featured">
           <span class="badge">Recomendado</span>
-          <h3><i class="fa-solid fa-robot" aria-hidden="true"></i> Bot WhatsApp 7 Dias</h3>
+          <h3>Bot WhatsApp 7 Dias</h3>
           <p class="price">R$ 4.500</p>
-          <ul>
+          <ul class="features">
             <li>Responde clientes 24/7, sem esforço</li>
             <li>Captura nome e telefone automaticamente</li>
             <li>Treino GPT‑4o incluso</li>
           </ul>
-          <a class="btn btn-cta mt-3" href="https://wa.me/5524998706745?text=Oi%20Gringo!%20Quero%20um%20bot%20para%3A" target="_blank" rel="noopener" aria-label="Contratar plano Bot WhatsApp 7 Dias via WhatsApp">
-            <i class="fa-brands fa-whatsapp" aria-hidden="true"></i> Contratar no WhatsApp
+          <a class="cta" href="https://wa.me/5524998706745?text=Oi%20Gringo!%20Quero%20um%20bot%20para%3A" target="_blank" rel="noopener" aria-label="Contratar Plano Bot WhatsApp 7 Dias via WhatsApp">
+            Contratar no WhatsApp
           </a>
-        </div>
-        <div class="card">
-          <h3><i class="fa-solid fa-chart-line" aria-hidden="true"></i> Espião de Preços</h3>
+        </li>
+        <li class="plan-card">
+          <h3>Espião de Preços</h3>
           <p class="price">R$ 5.800</p>
-          <ul>
+          <ul class="features">
             <li>Monitora concorrentes todo dia</li>
             <li>Relatório "quanto cobrar?" pronto para você</li>
             <li>Alerta diário por e-mail</li>
           </ul>
-          <a class="btn btn-main mt-3" href="https://wa.me/5524998706745?text=Oi%20Gringo!%20Quero%20monitorar%20estes%20produtos%3A" target="_blank" rel="noopener" aria-label="Contratar plano Espião de Preços via WhatsApp">
-            <i class="fa-brands fa-whatsapp" aria-hidden="true"></i> Contratar no WhatsApp
+          <a class="cta" href="https://wa.me/5524998706745?text=Oi%20Gringo!%20Quero%20monitorar%20estes%20produtos%3A" target="_blank" rel="noopener" aria-label="Contratar Plano Espião de Preços via WhatsApp">
+            Contratar no WhatsApp
           </a>
-        </div>
-      </div>
-      <a href="#roi" class="btn btn-cta" aria-label="Calcule seu ROI agora">Calcule seu ROI agora</a>
+        </li>
+      </ul>
+      <a href="#roi" class="btn btn-primary" aria-label="Calcule seu ROI agora">Calcule seu ROI agora</a>
     </section>
 
     <!-- ROI -->
@@ -289,7 +290,7 @@
         <div class="card" aria-label="Depoimento de Ana Paula, Loja de Roupas">
           <picture>
             <source srcset="assets/img/ana-paula.webp" type="image/webp">
-            <img src="assets/img/ana-paula.jpg" alt="Ana Paula, Loja de Roupas" width="80" height="80" loading="lazy" fetchpriority="low" class="avatar">
+            <img src="assets/img/ana-paula.jpg" alt="Ana Paula, Loja de Roupas" width="80" height="80" loading="lazy" class="avatar">
           </picture>
           <p>"O bot do Gringo me fez economizar 20 horas por mês! Recomendo para todo pequeno empresário."</p>
           <strong>— Ana Paula, Loja de Roupas</strong>
@@ -297,7 +298,7 @@
         <div class="card" aria-label="Depoimento de Carlos, Delivery de Pizzas">
           <picture>
             <source srcset="assets/img/carlos-silva.webp" type="image/webp">
-            <img src="assets/img/carlos-silva.jpg" alt="Carlos Silva, Delivery de Pizzas" width="80" height="80" loading="lazy" fetchpriority="low" class="avatar">
+            <img src="assets/img/carlos-silva.jpg" alt="Carlos Silva, Delivery de Pizzas" width="80" height="80" loading="lazy" class="avatar">
           </picture>
           <p>"Automatizei o WhatsApp e dobrei os pedidos em 1 semana. Atendimento top!"</p>
           <strong>— Carlos, Delivery de Pizzas</strong>
@@ -305,7 +306,7 @@
         <div class="card" aria-label="Depoimento de Juliana Souza, Papelaria Criativa">
           <picture>
             <source srcset="assets/img/juliana-souza.webp" type="image/webp">
-            <img src="assets/img/juliana-souza.jpg" alt="Juliana Souza, Papelaria Criativa" width="80" height="80" loading="lazy" fetchpriority="low" class="avatar">
+            <img src="assets/img/juliana-souza.jpg" alt="Juliana Souza, Papelaria Criativa" width="80" height="80" loading="lazy" class="avatar">
           </picture>
           <p>"O monitor de preços do Gringo me deu clareza para ajustar meus valores e aumentei o lucro em 18% no trimestre."</p>
           <strong>— Juliana Souza, Papelaria Criativa</strong>
@@ -417,6 +418,14 @@
   document.getElementById('cookie-customize')
           .addEventListener('click', () =>
             alert('Configuração granular de cookies em breve.'));
+  // Foco automático no banner ao abrir
+  if (!consent) {
+    setTimeout(() => {
+      banner.focus && banner.focus();
+      const btn = banner.querySelector('button');
+      if (btn) btn.focus();
+    }, 100);
+  }
 </script>
 
   <footer class="center">
@@ -427,7 +436,13 @@
   </footer>
 
   <!-- Botão flutuante WhatsApp -->
-  <script>
+<div class="sticky-whats" id="wa-float" role="complementary">
+  <a href="https://wa.me/5524998706745?text=Oi%20Gringo!%20Quero%20automatizar%20minha%20empresa" target="_blank" rel="noopener noreferrer" aria-label="Fale no WhatsApp com Gringo IA Coder">
+    <i class="fa-brands fa-whatsapp" style="font-size:1.5em;margin-right:8px" aria-hidden="true"></i> Fale no Whats
+  </a>
+  <button class="close" aria-label="Fechar banner WhatsApp" onclick="document.getElementById('wa-float').style.display='none'">×</button>
+</div>
+<script>
 function roi(){
   const g=parseFloat(document.getElementById('g').value)||0;
   const c=parseFloat(document.getElementById('c').value)||0;

@@ -2,6 +2,7 @@
 node_modules/
 .env
 .env.*
+*.env.local
 
 # Build
 assets/css/*.css
@@ -9,6 +10,7 @@ assets/css/*.min.css
 assets/css/dist/
 dist/
 *.log
+*.map
 
 # VSCode
 .vscode/
@@ -30,7 +32,4 @@ yarn-debug.log*
 yarn-error.log*
 
 # Testes
-coverage/
-
-# Git
-.git/ 
+coverage/ 
