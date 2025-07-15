@@ -1,9 +1,9 @@
 [build]
-publish = "dist"          # ou "build", conforme seu projeto
+publish = "dist"
 command = "npm run build"
 
 [build.environment]
-NODE_VERSION = "20"
+NODE_VERSION = "18.21.0"
 NPM_FLAGS = "--legacy-peer-deps"
 
 [context.production.environment]
