@@ -64,6 +64,6 @@ export default [
   },
   prettierConfig,
   {
-    ignores: ['assets/css/styles.min.css', 'assets/css/dist/**'],
+    ignores: ['assets/css/**/*.css', 'assets/css/**/dist/**'],
   },
 ];
